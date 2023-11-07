@@ -1,0 +1,22 @@
+version: '3'
+
+name: pumice-web3-compose
+services:
+  server-dev:
+    build:
+      context: packages/server/
+      dockerfile: Dockerfile.dev
+    image: pumice-web3-server:dev
+    ports:
+      - "3000:3000"
+
+  ui-dev:
+    build:
+      context: packages/ui/
+      dockerfile: Dockerfile.dev
+      args:
+        - SERVER_ENDPOINT=server-dev
+    ports:
+      - "8090:80"
+    depends_on:
+      - server-dev

@@ -1,0 +1,67 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "packageManager": "yarn@3.6.3",
+  "description": "",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "smartcontract:compile": "npx hardhat compile",
+    "build": "nest build",
+    "build:windows": "npx hardhat compile && yarnpkg rimraf ./dist/ && yarnpkg format && tsc -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "start:prod": "node dist/main",
+    "start:demo": "npx cross-env HOST=localhost PORT=3000 yarn start",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage",
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "blockchain:node": "npx ganache -m 'gadget travel lens flock hair vital erupt cinnamon veteran decline coin viable' --hardfork='london'"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-ethers": "3.0.4",
+    "@nomicfoundation/hardhat-ignition": "0.11.1",
+    "@nomicfoundation/hardhat-toolbox": "3.0.0",
+    "@openzeppelin/contracts": "4.9.3",
+    "ethers": "6.8.1",
+    "hardhat": "2.19.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "2.0.0",
+    "@nomicfoundation/hardhat-network-helpers": "1.0.0",
+    "@nomicfoundation/hardhat-verify": "1.0.0",
+    "@nomicfoundation/hardhat-viem": "1.0.0",
+    "@typechain/ethers-v6": "0.4.0",
+    "@typechain/hardhat": "8.0.0",
+    "@types/chai": "4.2.0",
+    "@types/chai-as-promised": "7.1.6",
+    "@types/mocha": "9.1.0",
+    "chai": "4.2.0",
+    "hardhat-gas-reporter": "1.0.8",
+    "rimraf": "5.0.5",
+    "solidity-coverage": "0.8.1",
+    "typechain": "8.2.0",
+    "viem": "1.15.1"
+  }
+}

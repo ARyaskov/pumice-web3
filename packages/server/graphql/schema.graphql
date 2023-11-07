@@ -1,0 +1,26 @@
+input DeployCollectionInput {
+  name: String!
+  symbol: String!
+}
+
+input MintNFTInput {
+  address: String!
+  tokenId: String!
+  tokenURI: String!
+}
+
+"""
+The root Query type that provides the entry point to the data graph.
+"""
+type Query {
+  "A simple root query"
+  root: String
+}
+
+"""
+Type defining the available mutations, allowing for modification of the data.
+"""
+type Mutation {
+  deployCollection(inputData: DeployCollectionInput!): String!
+  mintNFT(inputData: MintNFTInput!): Boolean!
+}
