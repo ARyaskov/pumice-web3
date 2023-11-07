@@ -1,4 +1,4 @@
-# pumice-web3 — Simplified NFT Collection Creator
+# 🥌 pumice-web3 — Simplified NFT Collection Creator
 ![TypeScript Badge](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=fff&style=flat)
 ![Node.js Badge](https://img.shields.io/badge/Node.js-393?logo=nodedotjs&logoColor=fff&style=flat)
 ![Solidity Badge](https://img.shields.io/badge/Solidity-363636?logo=solidity&logoColor=fff&style=flat)
